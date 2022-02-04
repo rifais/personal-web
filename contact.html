@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+    </style>
+    <title>Kontak</title>
+</head>
+<body>
+    <!-- Bar Navigasi -->
+    <nav>
+        <div class="left-side">
+            <a href="index.html">
+                <img src="assets/logo.png" alt="logo">
+            </a>
+            <ul>
+                <a href="index.html">
+                    <li>Home</li>
+                </a>
+                <a href="">
+                    <li>My Project</li>
+                </a>
+            </ul>
+        </div>
+        <div class="right-side">
+            <a href="contact.html">Contact Me</a>
+        </div>
+    </nav>
+    <!-- Formulir -->
+    <div class="form">
+        <form action="">
+            
+                <label for="name">Nama</label>
+                <input type="text" id="name" placeholder="Username">
+            
+            
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email">
+            
+            
+                <label for="hp">No HP</label>
+                <input type="text" id="hp" placeholder="Masukan No HP">
+            
+            
+                <label for="subject">Subjek</label>
+                <select name="" id="subject" required>
+                    <option value="Let's Talk">Let's Talk</option>
+                    <option value="Let's Collaboration">Lets Collaboration</option>
+                    <option value="I am Hiring">I am Hiring</option>
+                </select>
+            
+            
+                <label for="pesan">Pesan</label>
+                <textarea name="" id="pesan" cols="30" rows="15" placeholder="Pesan"></textarea>
+            <div class="submit-button">
+                <button type="button" onclick="showData()">Submit</button>
+            </div>
+        </form>  
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

@@ -40,8 +40,8 @@
               <label for="input-blog-date-end" style="width: 48%; text-align: left;">End Date</label>
             </div>
             <div class="input-blog-date">
-              <input type="date" id="input-blog-start-date" />
-              <input type="date" id="input-blog-end-date" />
+              <input type="month" id="start-date" />
+              <input type="month" id="end-date" />
             </div>
             <div>
               <label for="input-blog-content">Description</label>
@@ -51,12 +51,12 @@
               <label for="input-blog-title">Technologies</label>
             </div>
             <div class= "checkbox" style="display: flex;">
-              <label for="">NodeJs</label><input type="checkbox">
-              <label for="">ReactJs</label><input type="checkbox">
+              <label for="">NodeJs</label><input type="checkbox" id="nodejs" src="assets/nodejs.png">
+              <label for="">ReactJs</label><input type="checkbox" id="reactjs" src="assets/reactjs.png">
             </div>
             <div class= "checkbox" style="display: flex;">
-              <label for="">NextJs</label><input type="checkbox">
-              <label for="">Typescipt</label><input type="checkbox">
+              <label for="">NextJs</label><input type="checkbox" id="nextjs" src="assets/nextjs.png">
+              <label for="">Typescipt</label><input type="checkbox" id="typescript" src="assets/typescript.png">
             </div>
             <div>
               <label>Upload Image</label>
@@ -78,6 +78,7 @@
 
       </div> -->
       <hr class="line" />
+      <h1 style="text-align: center;">My Project</h1>
       <div id="contents" class="blog-list">
         <!-- dynamic content would be here -->
         <div class="blog-list-item">
@@ -85,15 +86,11 @@
             <img src="assets/blog-img.png" alt="" />
           </div>
           <div class="blog-content">
-            <div class="btn-group">
-              <button class="btn-edit">Edit Post</button>
-              <button class="btn-post">Post Blog</button>
-            </div>
             <h1>
               <a href="blog-detail.html" target="_blank"
-                >Pasar Coding di Indonesia Dinilai Masih Menjanjikan</a
-              >
+                >Dumbways App</a>
             </h1>
+            <p style="text-align: center;">durasi : 3 bulan</p>
             <div class="detail-blog-content">
               12 Jul 2021 22:30 WIB | Ichsan Emrald Alamsyah
             </div>
@@ -108,6 +105,14 @@
             </p>
             <div style="text-align: right; color: gray; font-size: 15px;">
               <span>1 hour ago</span>
+            </div>
+            <div class="btn-group">
+              <button class="btn-edit">Edit Post</button>
+              <button class="btn-post">Post Blog</button>
+              <img id="imgnodejs" src="assets/nodejs.png"  style="visibility:hidden"/>
+              <img id="imgreactjs" src="assets/reactjs.png"  style="visibility:hidden" />
+              <img id="imgnextjs" src="assets/nextjs.png"  style="visibility:hidden"/>
+              <img id="imgtypescript" src="assets/typescript.png"  style="visibility:hidden" />
             </div>
           </div>
         </div>

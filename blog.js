@@ -1,24 +1,56 @@
 let blogs = [];
 const monthIndex = [
-  "January", 
-  "February", 
-  "March", 
-  "April", 
+  "Jan", 
+  "Feb", 
+  "Mar", 
+  "Apr", 
   "May", 
-  "June", 
-  "July", 
-  "August", 
-  "September", 
-  "October", 
-  "November", 
-  "December"
+  "Jun", 
+  "Jul", 
+  "Aug", 
+  "Sep", 
+  "Oct", 
+  "Nov", 
+  "Dec"
 ];
+
 function addBlog(event){
     event.preventDefault()
 
     let title = document.getElementById('input-blog-title').value
     let content = document.getElementById('input-blog-content').value
     let image = document.getElementById('input-blog-image')
+    let dateFrom = document.getElementById('start-date').value
+    let dateTo = document.getElementById('end-date').value
+    let reactJs = document.getElementById('reactjs')
+    let nodeJs = document.getElementById('nodejs')
+    let nextJs = document.getElementById('nextjs')
+    let typeScript = document.getElementById('typescript')
+
+    if (nodeJs.style.visibility=="visible") {
+      nodeJs.style.visibility="hidden";
+}else {
+      nodeJs.style.visibility="visible";
+}
+
+if (reactJs.style.visibility=="visible") {
+  reactJs.style.visibility="hidden";
+}else {
+  reactJs.style.visibility="visible";
+}
+
+if (typeScript.style.visibility=="visible") {
+  typeScript.style.visibility="hidden";
+}else {
+  typeScript.style.visibility="visible";
+}
+
+if (nextJs.style.visibility=="visible") {
+  nextJs.style.visibility="hidden";
+}else {
+  nextJs.style.visibility="visible";
+}
+
 
     image = URL.createObjectURL(image.files[0])
 
@@ -27,10 +59,17 @@ function addBlog(event){
         title,
         content,
         image,
-        postedAt :new Date()
+        postedAt :new Date(),
+        dateFrom :new Date(),
+        dateTo :new Date(),
+        reactJs,
+        nodeJs,
+        nextJs,
+        typeScript,
     }
 
     blogs.push(blog)
+    console.log(dateTo-dateFrom)
 
     // let test = document.getElementById('test')
     // test.innerHTML += `<img src ="${image}" />` 
@@ -57,15 +96,13 @@ function renderBlog(){
             <img src="${blogs[i].image}" alt="" />
           </div>
           <div class="blog-content">
-            <div class="btn-group">
-              <button class="btn-edit">Edit Post</button>
-              <button class="btn-post">Post Blog</button>
-            </div>
+
             <h1>
               <a href="blog-detail.html" target="_blank"
                 >${blogs[i].title}</a
               >
             </h1>
+            <p style="text-align: center;">durasi : ${getDistanceMonth(blogs[i])} bulan</p>
             <div class="detail-blog-content">
             ${getFullTime(blogs[i].postedAt)} | ${blogs[i].author}
             </div>
@@ -75,12 +112,18 @@ function renderBlog(){
             <div style="text-align: right; color: gray; font-size: 15px;">
               <span>${getDistanceTime(blogs[i].postedAt)}</span>
             </div>
+            <div class="btn-group">
+            <button class="btn-edit">Edit Post</button>
+            <button class="btn-post">Post Blog</button>
+          </div>
           </div>
         </div>`
     }
 }
 
 function getFullTime(time){
+  
+
     const date = time.getDate()
     const month = time.getMonth(monthIndex)
     const year = time.getFullYear()
@@ -123,6 +166,12 @@ function getDistanceTime(time){
     }
 }
 
+function getDistanceMonth(dateFrom, dateTo){
+  return new Date(dateTo) - new Date(dateFrom)
+}
+
+
+
 setInterval(function(){
   renderBlog()
 }, 2000)
@@ -134,15 +183,14 @@ function firstBlogContent(){
             <img src="assets/blog-img.png" alt="" />
           </div>
           <div class="blog-content">
-            <div class="btn-group">
-              <button class="btn-edit">Edit Post</button>
-              <button class="btn-post">Post Blog</button>
-            </div>
+            
             <h1>
               <a href="blog-detail.html" target="_blank"
-                >Pasar Coding di Indonesia Dinilai Masih Menjanjikan</a
+                >Dumbways App</a
               >
+              
             </h1>
+            <p style="text-align: center;">durasi : 3 bulan</p>
             <div class="detail-blog-content">
               12 Jul 2021 22:30 WIB | Ichsan Emrald Alamsyah
             </div>
@@ -157,6 +205,10 @@ function firstBlogContent(){
             </p>
             <div style="text-align: right; color: gray; font-size: 15px;">
               <span>1 hour ago</span>
+            </div>
+            <div class="btn-group">
+              <button class="btn-edit">Edit Post</button>
+              <button class="btn-post">Post Blog</button>
             </div>
           </div>
         </div>`
